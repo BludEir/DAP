@@ -1,0 +1,229 @@
+/* General Styles */
+body {
+  background-color: #141414;
+  font-family: Arial, sans-serif;
+  color: white;
+  box-sizing: border-box;
+}
+.header {
+  position: fixed; /* Keep it at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  background-color: #1f1f1f; /* Background color */
+  padding: 20px 0; /* Adds space inside */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Aligns content to the left */
+  z-index: 1000; /* Keeps it above other elements */
+}
+
+.top-left-img {
+  position: absolute; /* Fix it at the top-left */
+  top: 10px;
+  left: 10px;
+  width: 6rem;
+  height: auto;
+}
+
+h1 {
+  margin-top: 50px; /* Push text down so it doesn’t overlap with the image */
+  margin-left: 8rem; /* Creates space between the image and text */
+  font-size: 2.25rem;
+  color: white;
+  white-space: normal;
+  line-height: 1.2;
+  max-width: 50%;
+  word-break: break-word;
+}
+
+
+h2, ol {
+  margin-left: 150px;
+}
+
+ol {
+  padding: 20px;
+}
+/* Adjust form spacing to prevent overlap with fixed header */
+form {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #3c3c3c;
+  margin: 180px auto 100px; /* Increased top margin */
+  max-width: 60rem;
+}
+
+.prediction-result {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.prediction-result h3 {
+  color: #f8d210;
+}
+
+
+/* label {
+  font-size: 18px;
+  margin-bottom: 10px;
+} */
+
+/* button {
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+} */
+
+button[type="submit"] {
+  background-color: #d01730;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #d01730;
+}
+
+/* Custom file upload styles */
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  
+  margin: 1.25rem auto;
+  padding: 0 3.125rem;
+}
+
+.drag-drop-label {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 1.875rem;
+}
+
+.cloudimg {
+  width: 3.125rem;
+  height: auto;
+  margin-right: 0.9375rem;
+}
+
+.drag-drop-text {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.drag-drop-label span {
+  font-size: 1.5625rem;
+  font-weight: bold;
+}
+
+.drag-drop-label p {
+  font-size: 0.875rem;
+  color: white;
+  margin-top: 0;
+}
+
+.browse-btn {
+  background-color: #282828;
+  color: white;
+  padding: 0.625rem 1.25rem;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  font-size: 1.5625rem;
+  cursor: pointer;
+  margin-left: 3.125rem;
+}
+
+.browse-btn:hover {
+  color: red;
+  border-color: red;
+}
+
+/* Chatbot styles */
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  display: none; /* Hidden by default */
+  z-index: 9999;
+}
+
+.chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.chatbox {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatlog {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button#send-message {
+  background-color: #007bff;
+}
+
+button#close-chat {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+/* Open Chat Button */
+.open-chat-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.open-chat-btn:hover {
+  background-color: #218838;
+}

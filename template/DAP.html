@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- Đây là một comment trong HTML -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Alzheimer's Disease Detection</title>
+        <link rel="stylesheet" href="DAP.css">
+    </head>
+    
+    <body>
+    
+        <div class="header">
+            <h1>Alzheimer's Disease Image Detection</h1>
+            <img src="images/uiacat.jpg" alt="uiacat" class="top-left-img">
+        </div>
+    
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="file-upload-container">
+                <div class="drag-drop-label">
+                    <img src="images/cloud.png" alt="cloud" class="cloudimg">
+                    <div class="drag-drop-text">
+                        <span>Drag and drop file here</span>
+                        <p>Limit 200MB per file • NII, NII.GZ, JPG, PNG</p>
+                    </div>
+                </div>
+                <input type="file" id="imageInput" name="image" accept="image/*, .nii, .nii.gz" hidden>
+                <button type="button" class="browse-btn" onclick="document.getElementById('imageInput').click()">Browse files</button>
+            </div>
+        </form>
+    
+        <div id="prediction-result" class="prediction-result">
+            <h3>Prediction Result:</h3>
+            <p id="result-text">No prediction yet.</p>
+        </div>
+    
+        <!-- Chatbot Open Button -->
+        <button id="open-chat" class="open-chat-btn">Open Chat</button>
+    
+        <!-- Chatbot UI -->
+        <div id="chatbot" class="chatbot">
+            <div class="chatbot-header">
+                <h3>Chat with us!</h3>
+                <button id="close-chat">X</button>
+            </div>
+            <div id="chatbox" class="chatbox">
+                <div id="chatlog" class="chatlog"></div>
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-message">Send</button>
+            </div>
+        </div>
+        <!-- Thêm TensorFlow.js từ CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+        <!-- Thêm file JavaScript của bạn, DAP.js -->
+        <script src="DAP.js"></script>
+        <h2 class="introduction"><b><u>Introduction:</u></b></h2>
+        <h2><b><u>Triệu chứng:</u></b></h2>
+        <ol>
+            <li><b>Mất trí nhớ ngắn hạn</b>
+                <ul>
+                    <li>Quên những sự kiện gần đây</li>
+                    <li>Khó khăn trong việc nhớ tên người quên, đồ vật
+                    </li>
+                </ul>
+            </li>
+            
+            <br>
+
+            <li><b>Khó khăn trong việc giải quyết vấn đề và đưa ra quyết định</b>
+                <ul>
+                    <li>Gặp khó khăn trong việc lập kế hoạch, giải quyết vấn đề hàng ngày</li>
+                    <li>Quên các bước đơn giản trong công việc hàng ngày</li>
+                </ul>
+            </li>
+
+            <br>
+
+            <li><b>Lú lẫn về thời gian và địa điểm</b>
+                <ul>
+                    <li>Người bệnh có thể mất phương hướng và không nhớ mình đang ở đâu, làm gì</li>
+                    <li>Có thể không nhớ ngày, tháng, năm</li>
+                </ul>
+            </li>
+
+            <br>
+
+            <li><b>Khó khăn trong giao tiếp</b>
+                <ul>
+                    <li>Quên từ ngữ trong câu chuyện hoặc không thể tiếp tục một cuộc trò chuyện</li>
+                    <li>Dễ bị lặp lại hoặc không hiểu một cuộc đối thoại</li>
+                </ul>
+            </li>
+
+            <br>
+
+            <li><b>Giảm khả năng phán đoán, đánh giá tình huống</b>
+                <ul>
+                    <li>Mất khả năng đánh giá các tình huống một các hợp lý</li>
+                    <li>Hành động một cách thiếu suy nghĩ hoặc không có kế hoạch</li>
+                </ul>
+            </li>
+
+            <br>
+
+            <li><b>Thay đổi trong hành vi, cảm xúc</b>
+                <ul>
+                    <li>Trở nên dễ nổi cáu, lo âu hoặc trầm cảm mà không có lý do chính đáng</li>
+                    <li>Hành vi có thể trở nên không phù hợp hoặc bộc lộ sự thất thường trong cảm xúc</li>
+                </ul>
+            </li>
+            
+            <br>
+
+            <li><b>Mất hứng thú với hành động trước đây</b>
+                <ul>
+                    <li>Người bệnh không còn hứng thú hoặc tham gia vào những hoạt động mà họ yêu thích trước đây</li>
+                </ul>
+            </li>
+
+            <br>
+
+            <li><b>Khó khăn trong việc thực hiện các công việc quen thuộc</b>
+                <ul>
+                    <li>Khó khăn trong việc thực hiện các hành động hành ngày như nấu ăn, lái xe</li>
+                </ul>
+            </li>
+
+            <br>
+
+            <li><b>Mất phán đoán về thời gian và sự kiện</b>
+                <ul>
+                    <li>Người bệnh không nhận ra thời gian trôi qua hoặc quên các sự kiện quan trọng</li></ul>
+            </li>
+
+            <br>
+
+            <li><b>Mất tính độc lập</b>
+                <ul>
+                    <li>Cần sự hỗ trợ trong việc chăm sóc bản thân, không thể tự làm các công việc đơn giản mà trước đây họ có thể làm một mình </li>
+                </ul>
+            </li>
+        </ol>
+        
+    </body>
+</html>
+
